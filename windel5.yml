@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+  - name: remove somefile
+    win_shell: "Get-ChildItem | Sort-Object -Property LastWriteTime -Desc | Select-Object -Skip 5 | Remove-Item -confirm:$false -Recurse"
+    args:
+      chdir: C:\temp
