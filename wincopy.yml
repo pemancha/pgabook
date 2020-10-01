@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Copy Dir
+      win_copy:
+        src: /opt/towin/
+        dest: C:\Temp
